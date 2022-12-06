@@ -145,6 +145,9 @@ task process_motif_folder {
         mkdir -p $old_name
         touch ~{parser}/$output_name
     >>>
+    runtime {
+        docker: 'ubuntu'
+    }
 
     output {
         Array[File?] placeholder_output = glob("~{parser}/*")
