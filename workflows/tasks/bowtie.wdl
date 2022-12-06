@@ -69,6 +69,7 @@ task bowtie {
         maxRetries: max_retries
         docker: 'ghcr.io/stjude/abralab/bowtie:v1.2.3'
         cpu: ncpu
+        disks: "local-disk 100 SSD" 
     }
     output {
         File samfile = "~{outputfile}"
