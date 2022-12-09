@@ -108,6 +108,8 @@ task viewsort {
         maxRetries: max_retries
         docker: 'ghcr.io/stjude/abralab/samtools:v1.9'
         cpu: ncpu
+	disks: "local-disk 200 SSD" 
+        bootDiskSizeGb: 100
     }
     output {
         File sortedbam = "~{default_location}/~{outputfile}"
