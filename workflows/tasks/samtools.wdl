@@ -75,8 +75,8 @@ task viewsort {
         Int ncpu = 1
     }
     command <<<
-        df -h 
-	
+        df -h
+        
         mkdir -p ~{default_location} && cd ~{default_location}
 
         if [ "~{paired_end}" == 'true' ]; then
@@ -110,7 +110,7 @@ task viewsort {
         maxRetries: max_retries
         docker: 'ghcr.io/stjude/abralab/samtools:v1.9'
         cpu: ncpu
-	disks: "local-disk 500 SSD" 
+        disks: "local-disk 500 SSD" 
         bootDiskSizeGb: 500
     }
     output {
